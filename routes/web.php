@@ -17,6 +17,7 @@ use \App\Http\Controllers\AuthController;
 
 //Route::get('/', 'ImageController@show');
 Route::get('/', [ImageController::class, 'show']);
+Route::get('/read/{id}', [ImageController::class, 'read']);
 
 //Route::get('/login', 'AuthController@loginPage');
 Route::get('/login', [AuthController::class, 'loginPage']);

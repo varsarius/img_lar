@@ -44,6 +44,19 @@
                 @endforeach
                 </select>
             </div>
+            <div class="form-group">
+                <label class="mb-3">
+                    Поиск по словам
+                </label>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">-O</span>
+                    </div>
+                    <input type="text" name="search" class="form-control" aria-label="Amount (to the nearest dollar)" />
+                </div>
+
+            </div>
             <div class="row">
                 <div class="col-auto" style="margin-top: 7%;">
                     <button type="submit" class="btn btn-primary">Применить фильтр</button>
@@ -54,6 +67,18 @@
             </div>
         </form>
     </div>
+
+{{--    <div class="container" style="margin-bottom: 2em">--}}
+{{--        <div class="row justify-content-center">--}}
+{{--            <div class="col-md-8">--}}
+{{--                <form class="form-inline my-2 my-lg-0 search-bar" action="/search" method="get">--}}
+{{--                    @csrf--}}
+{{--                    <input name="search" class="form-control mr-sm-2 w-75" type="search" placeholder="Поиск" aria-label="Search">--}}
+{{--                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>--}}
+{{--                </form>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
     <div class="tab-content">
         <div class="tab-pane fade active show" id="tabPaneOne" role="tabpanel">
@@ -69,7 +94,7 @@
 
                         <!-- Card -->
                         <div class="card">
-                            <img src="{{$image->path}}" alt="{{$image->name}}" class="card-img-top" height="400">
+                            <img src="{{asset($image->path)}}" alt="{{$image->name}}" class="card-img-top" height="400">
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col">
@@ -98,6 +123,7 @@
                                             {{$image->description}}
                                         </p>
 
+                                        <a class="btn btn-primary" href="/read/{{$image->id}}" role="button">Читать</a>
                                     </div>
                                 </div> <!-- / .row -->
 
@@ -216,4 +242,8 @@
         </div>
     </div>
 </div>
+
+
+
+
 @endsection

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
     <!-- Libs CSS -->
     <link rel="stylesheet" href="/assets/fonts/feather/feather.min.css">
     <link rel="stylesheet" href="/assets/libs/flatpickr/dist/flatpickr.min.css">

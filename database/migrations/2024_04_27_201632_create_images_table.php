@@ -15,7 +15,7 @@ return new class extends Migration
           $table->bigIncrements('id');
           $table->unsignedBigInteger('location_id')->nullable();
           $table->string('name');
-          $table->string('description')->nullable(); // переделать string на text
+          $table->text('description')->nullable(); // переделать string на text
           //$table->string('location');
           $table->date('date')->nullable();
           $table->string('path');

@@ -45,6 +45,19 @@
                 @endforeach
                 </select>
             </div>
+            <div class="form-group">
+                <label class="mb-3">
+                    Поиск по словам
+                </label>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">-O</span>
+                    </div>
+                    <input type="text" name="search" class="form-control" aria-label="Amount (to the nearest dollar)" />
+                </div>
+
+            </div>
             <div class="row">
                 <div class="col-auto" style="margin-top: 7%;">
                     <button type="submit" class="btn btn-primary">Применить фильтр</button>

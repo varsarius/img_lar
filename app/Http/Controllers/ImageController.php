@@ -19,7 +19,8 @@ class ImageController extends Controller
 {
     $data = $this->validate($request, [
       'location_id' => 'nullable|numeric',
-      'year' => 'nullable|numeric'
+      'year' => 'nullable|numeric',
+        'search' => 'nullable'
     ]);
 
     $years = array();
@@ -43,6 +44,10 @@ class ImageController extends Controller
     if (isset($data['location_id'])) {
       $query->where('location_id', request('location_id'));
     }
+    if (isset($data['search'])) {
+        $asd = request('search');
+        $query->where('name', 'like', "%$asd%");
+    }
 
     if(isset($data['year'])) {
       $from = Carbon::create($data['year'], 1, 1);
@@ -65,8 +70,17 @@ class ImageController extends Controller
     }
 }
 
+
 public function create(Request $request)
 {
+
+    $data = $this->validate($request, [
+        'file' => 'file',
+    ]);
+
+    if(!isset($data['year'])) {
+        return redirect()->back();
+    }
 
     $image = new Image;
 
@@ -170,4 +184,16 @@ public function create(Request $request)
     $image->save();
     return redirect('/');
   }
+
+
+    public function read($id, Request $request)
+    {
+        $image = Image::findOrFail($id);
+
+        return view('read', [
+            'image' => $image,
+            'locations' => Location::all(),
+        ]);
+    }
+
 }
